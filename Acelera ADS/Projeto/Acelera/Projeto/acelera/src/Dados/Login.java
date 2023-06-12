@@ -2,32 +2,32 @@ package Dados;
 
 public class Login
 {
-    private String nome;
+    private String email;
     private String senha;
    
 
     public Login() 
     {
-        this.nome=null;
+        this.email=null;
         this.senha=null;
           
     }
 
     public Login(String nome, String senha)
     {
-        this.nome = nome;
+        this.email = nome;
         this.senha = senha;
          
     }
 
-    public String getNome()
+    public String getEmail()
     {
-        return nome;
+        return email;
     }
 
-    public void setNome(String nome)
+    public void setEmail(String nome)
     {
-        this.nome = nome;
+        this.email = nome;
     }
 
     public String getSenha()

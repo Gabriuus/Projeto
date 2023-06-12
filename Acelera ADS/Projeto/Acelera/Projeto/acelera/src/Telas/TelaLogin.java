@@ -1,20 +1,16 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package Telas;
 
-/**
- *
- * @author Gabriel
- */
+import Banco.AcessoBD;
+import Dados.Login;
+import javax.swing.JOptionPane;
+
 public class TelaLogin extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Telas
-     */
+    private TelaLogin p;
+    
     public TelaLogin() {
         initComponents();
+        p = new TelaLogin();
     }
 
     /**
@@ -27,7 +23,7 @@ public class TelaLogin extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        LoginEmail1 = new javax.swing.JTextField();
+        loginEmail = new javax.swing.JTextField();
         campoSenha = new javax.swing.JPasswordField();
         jLabel1 = new javax.swing.JLabel();
         BtLogar = new javax.swing.JButton();
@@ -37,15 +33,15 @@ public class TelaLogin extends javax.swing.JFrame {
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        LoginEmail1.setBackground(new java.awt.Color(225, 225, 225));
-        LoginEmail1.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
-        LoginEmail1.setBorder(null);
-        LoginEmail1.addActionListener(new java.awt.event.ActionListener() {
+        loginEmail.setBackground(new java.awt.Color(225, 225, 225));
+        loginEmail.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        loginEmail.setBorder(null);
+        loginEmail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                LoginEmail1ActionPerformed(evt);
+                loginEmailActionPerformed(evt);
             }
         });
-        jPanel1.add(LoginEmail1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 282, 450, 60));
+        jPanel1.add(loginEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 282, 450, 60));
 
         campoSenha.setBackground(new java.awt.Color(225, 225, 225));
         campoSenha.setBorder(null);
@@ -77,12 +73,34 @@ public class TelaLogin extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void LoginEmail1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginEmail1ActionPerformed
+    private void loginEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginEmailActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_LoginEmail1ActionPerformed
+    }//GEN-LAST:event_loginEmailActionPerformed
 
     private void BtLogarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtLogarActionPerformed
-        System.exit(0);
+      String email;
+      String senha;
+      
+      AcessoBD acesso = new AcessoBD();
+      Login login = new Login();
+      
+      email = loginEmail.getText();
+      senha = campoSenha.getText();
+      
+      login.setEmail(email);
+      login.setSenha(senha);
+      
+      if(acesso.verificaAcesso(login)== true)
+      {
+        p.setVisible(true);
+            dispose();
+      }
+      else
+	{
+            JOptionPane.showMessageDialog(null, "Erro nos dados informados", "Erro", JOptionPane.ERROR_MESSAGE);
+	}
+      
+      
     }//GEN-LAST:event_BtLogarActionPerformed
 
     /**
@@ -123,9 +141,9 @@ public class TelaLogin extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtLogar;
-    private javax.swing.JTextField LoginEmail1;
     private javax.swing.JPasswordField campoSenha;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField loginEmail;
     // End of variables declaration//GEN-END:variables
 }
