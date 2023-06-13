@@ -28,18 +28,30 @@ public class DogJade extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        btVoltar = new javax.swing.JButton();
         btAdotar = new javax.swing.JButton();
+        btVoltar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/TelaJade.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/DogJade.png"))); // NOI18N
         jLabel1.setText("jLabel1");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
-        jPanel1.add(btVoltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 40, 50, 30));
-        jPanel1.add(btAdotar, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 610, 170, 50));
+
+        btAdotar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btAdotarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btAdotar, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 630, 180, 50));
+
+        btVoltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btVoltarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btVoltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 660, 50, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -54,6 +66,16 @@ public class DogJade extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltarActionPerformed
+        // TODO add your handling code here:
+        PaginaInicial pi = new PaginaInicial();
+        pi.setVisible(true);
+    }//GEN-LAST:event_btVoltarActionPerformed
+
+    private void btAdotarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAdotarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btAdotarActionPerformed
 
     /**
      * @param args the command line arguments

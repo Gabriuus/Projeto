@@ -93,6 +93,12 @@ public class CrieSuaConta extends javax.swing.JFrame {
             }
         });
         jPanel2.add(btCriarConta, new org.netbeans.lib.awtextra.AbsoluteConstraints(525, 650, 240, 50));
+
+        btTenhoConta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btTenhoContaActionPerformed(evt);
+            }
+        });
         jPanel2.add(btTenhoConta, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 110, 210, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -147,22 +153,20 @@ public class CrieSuaConta extends javax.swing.JFrame {
 	{
 		JOptionPane.showMessageDialog(null, "Erro no cadastro", "Erro",JOptionPane.ERROR_MESSAGE);
 	}
-    }
+    
     }//GEN-LAST:event_btCriarContaActionPerformed
 
     private void campoSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoSenhaActionPerformed
         
     }//GEN-LAST:event_campoSenhaActionPerformed
 
+    private void btTenhoContaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btTenhoContaActionPerformed
+        TelaLogin tl = new TelaLogin();
+        tl.setVisible(true);
+    }//GEN-LAST:event_btTenhoContaActionPerformed
+}
     
-    public static void main(String args[]) {
-      >
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new CrieSuaConta().setVisible(true);
-            }
-)};
-    }
+   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btCriarConta;
@@ -178,4 +182,4 @@ public class CrieSuaConta extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
-}
+

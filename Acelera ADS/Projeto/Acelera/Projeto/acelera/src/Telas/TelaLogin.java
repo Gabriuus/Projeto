@@ -27,6 +27,7 @@ public class TelaLogin extends javax.swing.JFrame {
         campoSenha = new javax.swing.JPasswordField();
         jLabel1 = new javax.swing.JLabel();
         BtLogar = new javax.swing.JButton();
+        btVoltar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -58,6 +59,15 @@ public class TelaLogin extends javax.swing.JFrame {
             }
         });
         jPanel1.add(BtLogar, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 560, 180, 40));
+
+        btVoltar.setText("jButton1");
+        btVoltar.setBorder(null);
+        btVoltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btVoltarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btVoltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 670, 60, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -103,6 +113,11 @@ public class TelaLogin extends javax.swing.JFrame {
       
     }//GEN-LAST:event_BtLogarActionPerformed
 
+    private void btVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltarActionPerformed
+        PaginaInicial pi = new PaginaInicial();
+        pi.setVisible(true);
+    }//GEN-LAST:event_btVoltarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -141,6 +156,7 @@ public class TelaLogin extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtLogar;
+    private javax.swing.JButton btVoltar;
     private javax.swing.JPasswordField campoSenha;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;

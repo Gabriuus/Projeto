@@ -6,14 +6,14 @@ package Telas;
 
 /**
  *
- * @author aluno
+ * @author Gabriel
  */
-public class GatoJade extends javax.swing.JFrame {
+public class TelaConfirmar extends javax.swing.JFrame {
 
     /**
-     * Creates new form GatoJade
+     * Creates new form TelaConfirmar
      */
-    public GatoJade() {
+    public TelaConfirmar() {
         initComponents();
     }
 
@@ -28,29 +28,32 @@ public class GatoJade extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        btAdotar = new javax.swing.JButton();
-        btVoltar = new javax.swing.JButton();
+        btConfirmar = new javax.swing.JButton();
+        btCancelar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/gatomiu e jade.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/16.png"))); // NOI18N
+        jLabel1.setText("jLabel1");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, -1));
 
-        btAdotar.addActionListener(new java.awt.event.ActionListener() {
+        btConfirmar.setText("jButton1");
+        btConfirmar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btAdotarActionPerformed(evt);
+                btConfirmarActionPerformed(evt);
             }
         });
-        jPanel1.add(btAdotar, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 630, 180, 50));
+        jPanel1.add(btConfirmar, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 410, 210, 60));
 
-        btVoltar.addActionListener(new java.awt.event.ActionListener() {
+        btCancelar.setText("jButton1");
+        btCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btVoltarActionPerformed(evt);
+                btCancelarActionPerformed(evt);
             }
         });
-        jPanel1.add(btVoltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 670, 40, 30));
+        jPanel1.add(btCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 410, 210, 60));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -66,15 +69,18 @@ public class GatoJade extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltarActionPerformed
+    private void btConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConfirmarActionPerformed
+        // TODO add your handling code here:
+        TelaVet tv = new TelaVet();
+        tv.setVisible(true);
+                
+    }//GEN-LAST:event_btConfirmarActionPerformed
+
+    private void btCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCancelarActionPerformed
         // TODO add your handling code here:
         PaginaInicial pi = new PaginaInicial();
         pi.setVisible(true);
-    }//GEN-LAST:event_btVoltarActionPerformed
-
-    private void btAdotarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAdotarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btAdotarActionPerformed
+    }//GEN-LAST:event_btCancelarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -93,27 +99,27 @@ public class GatoJade extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(GatoJade.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaConfirmar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(GatoJade.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaConfirmar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(GatoJade.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaConfirmar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(GatoJade.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaConfirmar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new GatoJade().setVisible(true);
+                new TelaConfirmar().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btAdotar;
-    private javax.swing.JButton btVoltar;
+    private javax.swing.JButton btCancelar;
+    private javax.swing.JButton btConfirmar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
