@@ -24,7 +24,7 @@ public class CrieSuaConta extends javax.swing.JFrame {
         cadastroMail = new javax.swing.JTextField();
         cadastroCpf = new javax.swing.JTextField();
         cadastroSobrenome = new javax.swing.JTextField();
-        cadastroNascimento = new javax.swing.JTextField();
+        cadastroData = new javax.swing.JTextField();
         cadastroTelefone = new javax.swing.JTextField();
         campoConfirmarSenha = new javax.swing.JPasswordField();
         campoSenha = new javax.swing.JPasswordField();
@@ -57,9 +57,9 @@ public class CrieSuaConta extends javax.swing.JFrame {
         cadastroSobrenome.setBorder(null);
         jPanel2.add(cadastroSobrenome, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 240, 330, 40));
 
-        cadastroNascimento.setBackground(new java.awt.Color(236, 236, 236));
-        cadastroNascimento.setBorder(null);
-        jPanel2.add(cadastroNascimento, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 360, 320, 40));
+        cadastroData.setBackground(new java.awt.Color(236, 236, 236));
+        cadastroData.setBorder(null);
+        jPanel2.add(cadastroData, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 360, 320, 40));
 
         cadastroTelefone.setBackground(new java.awt.Color(236, 236, 236));
         cadastroTelefone.setBorder(null);
@@ -129,30 +129,28 @@ public class CrieSuaConta extends javax.swing.JFrame {
 
     private void btCriarContaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCriarContaActionPerformed
        Pessoa pessoa = new Pessoa();
-       PessoaBD pessoaBD = new PessoaBD();
-        
-       nome= cadastroNome.getText();
-       cpf= cadastroCpf.getText();
-       senha = new String(campoSenha.getPassword());
-       telefone = cadastroTelefone.getText();
-       sobrenome = cadastroSobrenome.getText();
-       email = cadastroMail.getText();
-       
+        PessoaBD pessoaBD = new PessoaBD();
+
+        nome = cadastroNome.getText();
+        cpf = cadastroCpf.getText();
+        senha = new String(campoSenha.getPassword());
+        telefone = cadastroTelefone.getText();
+        sobrenome = cadastroSobrenome.getText();
+        email = cadastroMail.getText();
+
         pessoa.setNome(nome);
         pessoa.setSobrenome(sobrenome);
-	pessoa.setCpf(cpf);
-	pessoa.setTelefone(telefone);
-	pessoa.setEmail(email);
+        pessoa.setCpf(cpf);
+        pessoa.setTelefone(telefone);
+        pessoa.setEmail(email);
         pessoa.setSenha(senha);
-        
-        if(pessoaBD.inserirPessoa(pessoa) == true)
-	{
-		JOptionPane.showMessageDialog(null, "Pessoa cadastrada com sucesso!!!", "Cadastro",JOptionPane.INFORMATION_MESSAGE);
-	}
-	else
-	{
-		JOptionPane.showMessageDialog(null, "Erro no cadastro", "Erro",JOptionPane.ERROR_MESSAGE);
-	}
+
+        if (pessoaBD.inserirPessoa(pessoa)) {
+            JOptionPane.showMessageDialog(null, "Pessoa cadastrada com sucesso!!!", "Cadastro", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(null, "Erro no cadastro", "Erro", JOptionPane.ERROR_MESSAGE);
+        }
+    
     
     }//GEN-LAST:event_btCriarContaActionPerformed
 
@@ -172,8 +170,8 @@ public class CrieSuaConta extends javax.swing.JFrame {
     private javax.swing.JButton btCriarConta;
     private javax.swing.JButton btTenhoConta;
     private javax.swing.JTextField cadastroCpf;
+    private javax.swing.JTextField cadastroData;
     private javax.swing.JTextField cadastroMail;
-    private javax.swing.JTextField cadastroNascimento;
     private javax.swing.JTextField cadastroNome;
     private javax.swing.JTextField cadastroSobrenome;
     private javax.swing.JTextField cadastroTelefone;
