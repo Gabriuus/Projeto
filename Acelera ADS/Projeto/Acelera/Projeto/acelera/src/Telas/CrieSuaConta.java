@@ -7,7 +7,7 @@ import javax.swing.JOptionPane;
 
 
 public class CrieSuaConta extends javax.swing.JFrame {
-    private String nome,sobrenome,telefone,cpf,senha,email;
+    private String nome,sobrenome,telefone,cpf,email,senha;
 
     
     public CrieSuaConta() {
@@ -114,24 +114,20 @@ public class CrieSuaConta extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void cadastroNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastroNomeActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_cadastroNomeActionPerformed
 
-    private void campoSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoSenhaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_campoSenhaActionPerformed
-
     private void campoConfirmarSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoConfirmarSenhaActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_campoConfirmarSenhaActionPerformed
 
     private void btCriarContaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCriarContaActionPerformed
        Pessoa pessoa = new Pessoa();
-       PessoaBD pessoaBD = new PessoaDB();
+       PessoaBD pessoaBD = new PessoaBD();
         
        nome= cadastroNome.getText();
        cpf= cadastroCpf.getText();
-       senha = campoSenha.getText();
+       senha = new String(campoSenha.getPassword());
        telefone = cadastroTelefone.getText();
        sobrenome = cadastroSobrenome.getText();
        email = cadastroMail.getText();
@@ -141,6 +137,7 @@ public class CrieSuaConta extends javax.swing.JFrame {
 	pessoa.setCpf(cpf);
 	pessoa.setTelefone(telefone);
 	pessoa.setEmail(email);
+        pessoa.setSenha(senha);
         
         if(pessoaBD.inserirPessoa(pessoa) == true)
 	{
@@ -150,13 +147,12 @@ public class CrieSuaConta extends javax.swing.JFrame {
 	{
 		JOptionPane.showMessageDialog(null, "Erro no cadastro", "Erro",JOptionPane.ERROR_MESSAGE);
 	}
-    }     
-       
-        
-       
-      
-
+    }
     }//GEN-LAST:event_btCriarContaActionPerformed
+
+    private void campoSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoSenhaActionPerformed
+        
+    }//GEN-LAST:event_campoSenhaActionPerformed
 
     
     public static void main(String args[]) {
@@ -165,7 +161,7 @@ public class CrieSuaConta extends javax.swing.JFrame {
             public void run() {
                 new CrieSuaConta().setVisible(true);
             }
-        });
+)};
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

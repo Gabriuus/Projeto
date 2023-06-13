@@ -6,11 +6,11 @@ import javax.swing.JOptionPane;
 
 public class TelaLogin extends javax.swing.JFrame {
 
-    private TelaLogin p;
+    private TelaLogin t;
     
     public TelaLogin() {
         initComponents();
-        p = new TelaLogin();
+        t = new TelaLogin();
     }
 
     /**
@@ -92,7 +92,7 @@ public class TelaLogin extends javax.swing.JFrame {
       
       if(acesso.verificaAcesso(login)== true)
       {
-        p.setVisible(true);
+        t.setVisible(true);
             dispose();
       }
       else

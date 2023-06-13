@@ -30,7 +30,7 @@ public class AcessoBD
             
             while(res.next())
 			{
-			   if(login.getNome().compareTo(res.getString("nome"))==0 && login.getSenha().compareTo(res.getString("senha"))==0)
+			   if(login.getEmail().compareTo(res.getString("nome"))==0 && login.getSenha().compareTo(res.getString("senha"))==0)
 			   {
 				   status = true;
 				   

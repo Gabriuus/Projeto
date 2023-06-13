@@ -27,7 +27,7 @@ public class PessoaBD {
 
             String sql = "INSERT INTO pets(nome,sobrenome,telefone,email,senha,cpf) "
             		   + "VALUES ('"+ pessoa.getNome() + "','" + pessoa.getSobrenome() + "', '" 
-            		   + pessoa.getTelefone() + "', '" + pessoa.getEmail() + "')" + pessoa.getCpf() + "')" + pessoa.getNascimento() + "')";
+            		   + pessoa.getTelefone() + "', '" + pessoa.getEmail() + "')" + pessoa.getCpf() + "')" + pessoa.getData() + "')";
             System.out.println("SQL: " + sql);
             stmt.executeUpdate(sql);
             

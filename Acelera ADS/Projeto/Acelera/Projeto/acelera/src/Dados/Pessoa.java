@@ -7,7 +7,7 @@ public class Pessoa
     private String telefone;
     private String email;
     private String cpf;
-    private String nascimento;
+    private String data;
     
     
 
@@ -18,7 +18,7 @@ public class Pessoa
         this.telefone=null;
         this.email=null; 
         this.cpf=null;
-        this.nascimento=null;
+        this.data=null;
         
     }
 
@@ -28,7 +28,7 @@ public class Pessoa
         this.cpf = cpf;
         this.telefone = telefone;
         this.email = email;      
-        this.nascimento= nascimento;
+        this.data= data;
         this.sobrenome= sobrenome;
     }
 
@@ -82,13 +82,13 @@ public class Pessoa
     this.sobrenome= sobrenome;
     
     }
-    public String getNascimento(){
-    return nascimento;
+    public String getData(){
+    return data;
     
    }
     public void setNascimento(String Nascimento)
     {
-    this.nascimento = nascimento;
+    this.data = data;
     }
     
 }

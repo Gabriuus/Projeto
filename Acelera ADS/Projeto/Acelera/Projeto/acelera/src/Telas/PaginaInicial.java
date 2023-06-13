@@ -37,6 +37,12 @@ public class PaginaInicial extends javax.swing.JFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/1.png"))); // NOI18N
         jLabel1.setText("jLabel1");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 730));
+
+        BtAdotante.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtAdotanteActionPerformed(evt);
+            }
+        });
         jPanel1.add(BtAdotante, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 580, 260, 70));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -56,6 +62,11 @@ public class PaginaInicial extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void BtAdotanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtAdotanteActionPerformed
+        TelaLogin tl = new TelaLogin();
+        tl.setVisible(true);
+    }//GEN-LAST:event_BtAdotanteActionPerformed
 
     /**
      * @param args the command line arguments
